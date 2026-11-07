@@ -1,0 +1,201 @@
+/* Theme variables */
+:root {
+  --accent: #3b5b92;
+  --accent2: #e4572e;
+}
+
+/* Base styles */
+body {
+  background: #f4f6fb;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Header & navigation bar */
+.navbar,
+.bslib-page-title,
+header {
+  background: linear-gradient(135deg, #1f2f52, #3b5b92) !important;
+  color: #fff !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #fff !important;
+  opacity: 0.85;
+}
+
+.navbar .nav-link.active {
+  opacity: 1;
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+}
+
+.app-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.app-sub {
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-left: 12px;
+  opacity: 0.85;
+}
+
+@media (max-width: 991px) {
+  .app-sub {
+    display: none;
+  }
+}
+
+/* Summary stats KPI cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 10px rgba(31, 47, 82, 0.08);
+  min-width: 0;
+}
+
+.stat:nth-child(2) {
+  border-color: #2a9d8f;
+}
+
+.stat:nth-child(3) {
+  border-color: #7a5bd1;
+}
+
+.stat:nth-child(4) {
+  border-color: var(--accent2);
+}
+
+.stat .lbl {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7691;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat .val {
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  color: #1f2f52;
+  line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .stat {
+    padding: 6px 8px;
+  }
+
+  .stat .lbl {
+    font-size: 0.6rem;
+  }
+}
+
+/* Cards & containers */
+.card {
+  border: 0 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 12px rgba(31, 47, 82, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(31, 47, 82, 0.15);
+}
+
+.card-header {
+  background: transparent !important;
+  font-weight: 600;
+  color: #1f2f52;
+  border-bottom: 1px solid #e6eaf3 !important;
+}
+
+.bslib-value-box {
+  border-radius: 14px !important;
+}
+
+.bslib-sidebar-layout > .sidebar {
+  background: #fff !important;
+}
+
+/* Slider controls & notes */
+.irs--shiny .irs-bar,
+.irs--shiny .irs-handle {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #6b7691;
+  line-height: 1.35;
+}
+
+/* Left-panel view navigation */
+#view_mode .shiny-options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+#view_mode .form-check {
+  padding: 0;
+  margin: 0;
+}
+
+#view_mode .form-check-input {
+  display: none;
+}
+
+#view_mode .form-check-label {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1f2f52;
+  background: #f4f6fb;
+  border: 1px solid #e6eaf3;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+#view_mode .form-check-label:hover {
+  background: #e8ecf5;
+}
+
+#view_mode .form-check-input:checked + .form-check-label,
+#view_mode .form-check-input:checked ~ span {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(59, 91, 146, 0.25);
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 576px) {
+  .container-fluid {
+    padding: 8px !important;
+  }
+}
