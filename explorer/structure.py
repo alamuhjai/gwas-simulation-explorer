@@ -67,7 +67,7 @@ def sharedLimits(*results):
 
 
 def makeFigure(kind, res, causalSnps, title, lam=None, limit=None):
-    """Build one Manhattan or QQ figure using the gwas plotting functions."""
+    """Build Manhattan/QQ figure using the gwas plotting functions."""
     fig, ax = plt.subplots(layout="constrained")
     if kind == "manhattan":
         manhattan(ax, res, causalSnps=causalSnps, title=title, ymax=limit)
